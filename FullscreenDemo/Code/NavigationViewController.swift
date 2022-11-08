@@ -32,7 +32,7 @@ class NavigationViewController: UINavigationController {
     }
     
     override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
-        if viewControllers.count > 0 {
+        if viewControllers.count > 1 {
             viewControllers.last?.hidesBottomBarWhenPushed = true
         }
         super.setViewControllers(viewControllers, animated: true)
