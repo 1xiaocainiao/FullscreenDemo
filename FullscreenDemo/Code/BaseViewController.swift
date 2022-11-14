@@ -8,6 +8,8 @@
 import UIKit
 
 class BaseViewController: UIViewController {
+    var isFullScreen:Bool = false
+    
     var statusBarHidden: Bool = false {
         didSet {
             setNeedsStatusBarAppearanceUpdate()
@@ -43,6 +45,8 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = .yellow
 
         // Do any additional setup after loading the view.
     }

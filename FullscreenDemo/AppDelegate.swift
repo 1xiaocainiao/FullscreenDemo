@@ -9,9 +9,6 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var allowRotation: Bool = false
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -30,16 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-    
+    /// app支持的方向，与target设置里面的设置一样，优先级比较高, viewcontroller 中 supportedInterfaceOrientations 支持的方向，必须与这个方法的有交集
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        if allowRotation {
+        if let topVc = getCurrentDisplayController() as? BaseViewController, topVc.isFullScreen {
             return [.landscapeRight, .landscapeLeft]
-        } else {
-            if ViewController.isFullscreen {
-                return [.landscapeRight, .landscapeLeft]
-            }
-            return .portrait
         }
+        return [.portrait, .landscapeRight, .landscapeLeft]
     }
 
     static func app() -> AppDelegate? {

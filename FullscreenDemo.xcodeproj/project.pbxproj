@@ -19,7 +19,8 @@
 		A00E7AF728DC050C001578A4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E7AF628DC050C001578A4 /* BaseViewController.swift */; };
 		A00E7AF928DC0531001578A4 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E7AF828DC0531001578A4 /* NavigationViewController.swift */; };
 		A00E7AFB28DC05B3001578A4 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E7AFA28DC05B3001578A4 /* MainTabBarViewController.swift */; };
-		A00E7AFE28DC05EF001578A4 /* UIDevice+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E7AFD28DC05EF001578A4 /* UIDevice+Rotation.swift */; };
+		A0A2C622291E2577006D4D58 /* UIViewController+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C621291E2577006D4D58 /* UIViewController+Rotation.swift */; };
+		A0A2C624291E27DB006D4D58 /* FullScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C623291E27DB006D4D58 /* FullScreenController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +57,8 @@
 		A00E7AF628DC050C001578A4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A00E7AF828DC0531001578A4 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		A00E7AFA28DC05B3001578A4 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		A00E7AFD28DC05EF001578A4 /* UIDevice+Rotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Rotation.swift"; sourceTree = "<group>"; };
+		A0A2C621291E2577006D4D58 /* UIViewController+Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rotation.swift"; sourceTree = "<group>"; };
+		A0A2C623291E27DB006D4D58 /* FullScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				A00E7AC628DC04D6001578A4 /* AppDelegate.swift */,
 				A00E7AC828DC04D6001578A4 /* SceneDelegate.swift */,
 				A00E7ACA28DC04D6001578A4 /* ViewController.swift */,
+				A0A2C623291E27DB006D4D58 /* FullScreenController.swift */,
 				A00E7ACC28DC04D6001578A4 /* Main.storyboard */,
 				A00E7ACF28DC04D7001578A4 /* Assets.xcassets */,
 				A00E7AD128DC04D7001578A4 /* LaunchScreen.storyboard */,
@@ -139,10 +142,10 @@
 		A00E7AFC28DC05C3001578A4 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				A00E7AFD28DC05EF001578A4 /* UIDevice+Rotation.swift */,
 				A00E7AF828DC0531001578A4 /* NavigationViewController.swift */,
 				A00E7AF628DC050C001578A4 /* BaseViewController.swift */,
 				A00E7AFA28DC05B3001578A4 /* MainTabBarViewController.swift */,
+				A0A2C621291E2577006D4D58 /* UIViewController+Rotation.swift */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -278,10 +281,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0A2C622291E2577006D4D58 /* UIViewController+Rotation.swift in Sources */,
 				A00E7ACB28DC04D6001578A4 /* ViewController.swift in Sources */,
-				A00E7AFE28DC05EF001578A4 /* UIDevice+Rotation.swift in Sources */,
 				A00E7AF728DC050C001578A4 /* BaseViewController.swift in Sources */,
 				A00E7AC728DC04D6001578A4 /* AppDelegate.swift in Sources */,
+				A0A2C624291E27DB006D4D58 /* FullScreenController.swift in Sources */,
 				A00E7AFB28DC05B3001578A4 /* MainTabBarViewController.swift in Sources */,
 				A00E7AF928DC0531001578A4 /* NavigationViewController.swift in Sources */,
 				A00E7AC928DC04D6001578A4 /* SceneDelegate.swift in Sources */,
@@ -461,6 +465,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FullscreenDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -468,13 +473,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sioeye.FullscreenDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.live;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -489,6 +494,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FullscreenDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -496,13 +502,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sioeye.FullscreenDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.live;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
