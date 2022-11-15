@@ -2,8 +2,8 @@
 //  NavigationViewController.swift
 //  YouLeApp
 //
-//  Created by Hu Yi on 2018/8/25.
-//  Copyright © 2018年 Sioeye Inc. All rights reserved.
+//  Created by  on 2018/8/25.
+//  Copyright © 2018年  Inc. All rights reserved.
 //
 
 import UIKit

@@ -2,7 +2,7 @@
 //  UIViewController+Rotation.swift
 //  FullscreenDemo
 //
-//  Created by sioeye on 2022/11/11.
+//  Created by  on 2022/11/11.
 //
 
 import Foundation
