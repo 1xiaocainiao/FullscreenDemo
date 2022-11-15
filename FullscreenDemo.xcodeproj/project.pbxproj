@@ -21,6 +21,7 @@
 		A00E7AFB28DC05B3001578A4 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E7AFA28DC05B3001578A4 /* MainTabBarViewController.swift */; };
 		A0A2C622291E2577006D4D58 /* UIViewController+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C621291E2577006D4D58 /* UIViewController+Rotation.swift */; };
 		A0A2C624291E27DB006D4D58 /* FullScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C623291E27DB006D4D58 /* FullScreenController.swift */; };
+		A0A2C62629236FC8006D4D58 /* ThirdPortraitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C62529236FC8006D4D58 /* ThirdPortraitController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		A00E7AFA28DC05B3001578A4 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		A0A2C621291E2577006D4D58 /* UIViewController+Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rotation.swift"; sourceTree = "<group>"; };
 		A0A2C623291E27DB006D4D58 /* FullScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenController.swift; sourceTree = "<group>"; };
+		A0A2C62529236FC8006D4D58 /* ThirdPortraitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPortraitController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				A00E7AC828DC04D6001578A4 /* SceneDelegate.swift */,
 				A00E7ACA28DC04D6001578A4 /* ViewController.swift */,
 				A0A2C623291E27DB006D4D58 /* FullScreenController.swift */,
+				A0A2C62529236FC8006D4D58 /* ThirdPortraitController.swift */,
 				A00E7ACC28DC04D6001578A4 /* Main.storyboard */,
 				A00E7ACF28DC04D7001578A4 /* Assets.xcassets */,
 				A00E7AD128DC04D7001578A4 /* LaunchScreen.storyboard */,
@@ -282,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0A2C622291E2577006D4D58 /* UIViewController+Rotation.swift in Sources */,
+				A0A2C62629236FC8006D4D58 /* ThirdPortraitController.swift in Sources */,
 				A00E7ACB28DC04D6001578A4 /* ViewController.swift in Sources */,
 				A00E7AF728DC050C001578A4 /* BaseViewController.swift in Sources */,
 				A00E7AC728DC04D6001578A4 /* AppDelegate.swift in Sources */,

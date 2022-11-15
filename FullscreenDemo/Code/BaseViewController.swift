@@ -8,8 +8,6 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-    var isFullScreen:Bool = false
-    
     var statusBarHidden: Bool = false {
         didSet {
             setNeedsStatusBarAppearanceUpdate()

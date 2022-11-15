@@ -28,7 +28,7 @@ class ViewController: BaseViewController {
         guard let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "FullScreenID") as? FullScreenController else {
             return
         }
-        vc.isFullScreen = true
+        vc.orientationMask = .landscapeRight
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -29,9 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     /// app支持的方向，与target设置里面的设置一样，优先级比较高, viewcontroller 中 supportedInterfaceOrientations 支持的方向，必须与这个方法的有交集
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        if let topVc = getCurrentDisplayController() as? BaseViewController, topVc.isFullScreen {
-            return [.landscapeRight, .landscapeLeft]
-        }
         return [.portrait, .landscapeRight, .landscapeLeft]
     }
 
