@@ -43,10 +43,10 @@ extension UIViewController {
 }
 
 extension BaseViewController {
-    struct Holder {
-        static var _canRotation:Bool = false
+    private struct AssociatedKey {
+        static var canRotation: String = "canRotation"
         
-        static var _orientationMask: UIInterfaceOrientationMask = .portrait
+        static var orientationMask: String = "orientationMask"
     }
     
     var isFullScreen:Bool {
@@ -56,20 +56,20 @@ extension BaseViewController {
     /// 是否可以旋转
     fileprivate var canRotation:Bool {
         get {
-            return Holder._canRotation
+            return objc_getAssociatedObject(self, &AssociatedKey.canRotation) as? Bool ?? false
         }
         set(newValue) {
-            Holder._canRotation = newValue
+            objc_setAssociatedObject(self, &AssociatedKey.canRotation, newValue, .OBJC_ASSOCIATION_RETAIN)
         }
     }
     
-    var orientationMask: UIInterfaceOrientationMask {
+    @objc var orientationMask: UIInterfaceOrientationMask {
         get {
-            return Holder._orientationMask
+            return objc_getAssociatedObject(self, &AssociatedKey.orientationMask) as? UIInterfaceOrientationMask ?? .portrait
         }
         set(newValue) {
             if newValue != orientationMask {
-                Holder._orientationMask = newValue
+                objc_setAssociatedObject(self, &AssociatedKey.orientationMask, newValue, .OBJC_ASSOCIATION_RETAIN)
             }
         }
     }
