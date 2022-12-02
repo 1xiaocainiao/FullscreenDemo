@@ -59,7 +59,7 @@ extension BaseViewController {
             return objc_getAssociatedObject(self, &AssociatedKey.canRotation) as? Bool ?? false
         }
         set(newValue) {
-            objc_setAssociatedObject(self, &AssociatedKey.canRotation, newValue, .OBJC_ASSOCIATION_RETAIN)
+            objc_setAssociatedObject(self, &AssociatedKey.canRotation, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
@@ -69,7 +69,7 @@ extension BaseViewController {
         }
         set(newValue) {
             if newValue != orientationMask {
-                objc_setAssociatedObject(self, &AssociatedKey.orientationMask, newValue, .OBJC_ASSOCIATION_RETAIN)
+                objc_setAssociatedObject(self, &AssociatedKey.orientationMask, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             }
         }
     }
