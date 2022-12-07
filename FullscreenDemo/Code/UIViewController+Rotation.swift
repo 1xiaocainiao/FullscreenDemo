@@ -92,7 +92,7 @@ extension BaseViewController {
     }
     
     @objc func rotationDidChanged(_ noti: Notification) {
-        if canRotation {
+        if !canRotation {
             return
         }
         
@@ -175,10 +175,10 @@ extension BaseViewController {
     }
     /// 进入前台
     @objc func didBecomeActive(_ noti: Notification) {
-        canRotation = false
+        canRotation = true
     }
     /// 进入后台
     @objc func willResignActive(_ noti: Notification) {
-        canRotation = true
+        canRotation = false
     }
 }
