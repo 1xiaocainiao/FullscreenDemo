@@ -31,6 +31,14 @@ class ViewController: BaseViewController {
         vc.orientationMask = .landscapeRight
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @IBAction func pushLockedDidTouched(_ sender: UIButton) {
+        guard let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "LockedID") as? LockedViewController else {
+            return
+        }
+        vc.orientationMask = .landscapeRight
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 // 是否全屏，旋转后布局，用这个字段判断是否全屏

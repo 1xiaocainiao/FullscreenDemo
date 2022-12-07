@@ -41,11 +41,21 @@
                                     <action selector="enterfullScreenDidTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X0D-gf-oaK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9w-xB-Tj7">
+                                <rect key="frame" x="136.66666666666666" y="191" width="116.66666666666666" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="pushLocked"/>
+                                <connections>
+                                    <action selector="pushLockedDidTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K7Z-Tb-bxy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="v9w-xB-Tj7" firstAttribute="top" secondItem="tAS-uL-BkI" secondAttribute="bottom" constant="50" id="0ZC-Wc-y7o"/>
                             <constraint firstItem="tAS-uL-BkI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YEj-F3-Mow"/>
+                            <constraint firstItem="v9w-xB-Tj7" firstAttribute="centerX" secondItem="tAS-uL-BkI" secondAttribute="centerX" id="kxn-pB-fyA"/>
                             <constraint firstItem="tAS-uL-BkI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="lpC-Tm-3Nu"/>
                         </constraints>
                     </view>
@@ -72,7 +82,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6LY-ac-cea">
-                                <rect key="frame" x="149" y="667" width="92.333333333333314" height="35"/>
+                                <rect key="frame" x="149" y="232" width="92.333333333333314" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="pushTest"/>
                                 <connections>
@@ -85,14 +95,46 @@
                         <constraints>
                             <constraint firstItem="J6e-HC-FhL" firstAttribute="top" secondItem="8WM-rf-mfW" secondAttribute="top" constant="100" id="1Xs-bS-k84"/>
                             <constraint firstItem="6LY-ac-cea" firstAttribute="centerX" secondItem="D5d-xS-2Ha" secondAttribute="centerX" id="C8l-Ej-jTY"/>
+                            <constraint firstItem="6LY-ac-cea" firstAttribute="top" secondItem="J6e-HC-FhL" secondAttribute="bottom" constant="50" id="O8M-aR-3fa"/>
                             <constraint firstItem="J6e-HC-FhL" firstAttribute="centerX" secondItem="D5d-xS-2Ha" secondAttribute="centerX" id="RUv-UB-tb2"/>
-                            <constraint firstItem="8WM-rf-mfW" firstAttribute="bottom" secondItem="6LY-ac-cea" secondAttribute="bottom" constant="108" id="xzv-dI-nR6"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbN-Gw-rDY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-29" y="-45"/>
+        </scene>
+        <!--Locked View Controller-->
+        <scene sceneID="4Nv-a2-Psc">
+            <objects>
+                <viewController storyboardIdentifier="LockedID" id="txw-ZV-MWA" customClass="LockedViewController" customModule="FullscreenDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nhY-KH-P48">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBY-gZ-bTT">
+                                <rect key="frame" x="157.66666666666666" y="115" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="locked"/>
+                                <connections>
+                                    <action selector="lockedBtnDidTouched:" destination="txw-ZV-MWA" eventType="touchUpInside" id="NAQ-fi-o27"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fH7-5k-ysY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KBY-gZ-bTT" firstAttribute="centerX" secondItem="nhY-KH-P48" secondAttribute="centerX" id="V3e-Ok-fg8"/>
+                            <constraint firstItem="KBY-gZ-bTT" firstAttribute="top" secondItem="fH7-5k-ysY" secondAttribute="top" constant="68" id="nI5-V5-XdV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lockedBtn" destination="KBY-gZ-bTT" id="tFU-i5-1fS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kq5-2n-1eQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="769" y="-29"/>
         </scene>
     </scenes>
     <resources>

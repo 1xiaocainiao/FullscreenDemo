@@ -19,6 +19,7 @@
 		A00E7AF728DC050C001578A4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E7AF628DC050C001578A4 /* BaseViewController.swift */; };
 		A00E7AF928DC0531001578A4 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E7AF828DC0531001578A4 /* NavigationViewController.swift */; };
 		A00E7AFB28DC05B3001578A4 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00E7AFA28DC05B3001578A4 /* MainTabBarViewController.swift */; };
+		A012B80B29407E9B0085E9F1 /* LockedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012B80A29407E9B0085E9F1 /* LockedViewController.swift */; };
 		A0A2C622291E2577006D4D58 /* UIViewController+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C621291E2577006D4D58 /* UIViewController+Rotation.swift */; };
 		A0A2C624291E27DB006D4D58 /* FullScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C623291E27DB006D4D58 /* FullScreenController.swift */; };
 		A0A2C62629236FC8006D4D58 /* ThirdPortraitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A2C62529236FC8006D4D58 /* ThirdPortraitController.swift */; };
@@ -58,6 +59,7 @@
 		A00E7AF628DC050C001578A4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A00E7AF828DC0531001578A4 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		A00E7AFA28DC05B3001578A4 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		A012B80A29407E9B0085E9F1 /* LockedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedViewController.swift; sourceTree = "<group>"; };
 		A0A2C621291E2577006D4D58 /* UIViewController+Rotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rotation.swift"; sourceTree = "<group>"; };
 		A0A2C623291E27DB006D4D58 /* FullScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenController.swift; sourceTree = "<group>"; };
 		A0A2C62529236FC8006D4D58 /* ThirdPortraitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPortraitController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				A00E7ACA28DC04D6001578A4 /* ViewController.swift */,
 				A0A2C623291E27DB006D4D58 /* FullScreenController.swift */,
 				A0A2C62529236FC8006D4D58 /* ThirdPortraitController.swift */,
+				A012B80A29407E9B0085E9F1 /* LockedViewController.swift */,
 				A00E7ACC28DC04D6001578A4 /* Main.storyboard */,
 				A00E7ACF28DC04D7001578A4 /* Assets.xcassets */,
 				A00E7AD128DC04D7001578A4 /* LaunchScreen.storyboard */,
@@ -290,6 +293,7 @@
 				A00E7AF728DC050C001578A4 /* BaseViewController.swift in Sources */,
 				A00E7AC728DC04D6001578A4 /* AppDelegate.swift in Sources */,
 				A0A2C624291E27DB006D4D58 /* FullScreenController.swift in Sources */,
+				A012B80B29407E9B0085E9F1 /* LockedViewController.swift in Sources */,
 				A00E7AFB28DC05B3001578A4 /* MainTabBarViewController.swift in Sources */,
 				A00E7AF928DC0531001578A4 /* NavigationViewController.swift in Sources */,
 				A00E7AC928DC04D6001578A4 /* SceneDelegate.swift in Sources */,

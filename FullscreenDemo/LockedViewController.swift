@@ -1,15 +1,15 @@
 //
-//  FullScreenController.swift
+//  LockedViewController.swift
 //  FullscreenDemo
 //
-//  Created by  on 2022/11/11.
+//  Created by sioeye on 2022/12/7.
 //
 
 import UIKit
 
-class FullScreenController: BaseViewController {
+class LockedViewController: BaseViewController {
     
-    var beforePushOrientation: UIInterfaceOrientationMask?
+    @IBOutlet weak var lockedBtn: UIButton!
     
     deinit {
         if #available(iOS 16, *) {
@@ -26,7 +26,9 @@ class FullScreenController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .gray
+        self.title = "lock test"
+        
+        self.view.backgroundColor = .white
         
         addObserverAppActive()
 
@@ -38,39 +40,21 @@ class FullScreenController: BaseViewController {
             // 不知道为啥，iOS 16以下需要自己旋转横屏
             switchOrientation(orientationMask)
         }
+
+        refreshLockedBtnTitle()
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        /// 检查push前是否为横屏，并重设
-        if let orient = beforePushOrientation, orient.isFullScreen {
-            switchOrientation(orient)
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
     }
     
     override var shouldAutorotate: Bool {
         return true
     }
-
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return isFullScreen ? [.landscapeRight, .landscapeLeft] : .portrait
+        return isLocked ? self.orientationMask : (isFullScreen ? [.landscapeRight, .landscapeLeft] : .portrait)
     }
 
     override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        return isFullScreen ? .landscapeRight : .portrait
+        return isLocked ? Self.convertInterfaceOrientationMaskToInterfaceOrientation(self.orientationMask) : (isFullScreen ? .landscapeRight : .portrait)
     }
     
     // MARK: - 旋转后重新布局
@@ -83,24 +67,23 @@ class FullScreenController: BaseViewController {
             print("竖屏布局")
         }
     }
-
-    @IBAction func fullScreenChanged(_ sender: UIButton) {
-        switchOrientation(isFullScreen ? .portrait : .landscapeRight)
-    }
     
-    @IBAction func pushTestBtnDidTouched(_ sender: UIButton) {
-        beforePushOrientation = orientationMask
+    @IBAction func lockedBtnDidTouched(_ sender: UIButton) {
+        isLocked = !isLocked
         
-        if isFullScreen {
-            switchOrientation(.portrait)
+        refreshLockedBtnTitle()
+        
+        if isLocked {
+            removeObserverSwitchLandscape()
+        } else {
+            addObserverSwitchLandscape()
         }
-        
-        let vc = ThirdPortraitController()
-        self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    
-    
+    func refreshLockedBtnTitle() {
+        lockedBtn.setTitle(isLocked ? "locked" : "unLocked", for: .normal)
+    }
+
     /*
     // MARK: - Navigation
 

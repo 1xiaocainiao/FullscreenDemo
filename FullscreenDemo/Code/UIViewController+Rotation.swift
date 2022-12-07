@@ -40,6 +40,19 @@ extension UIViewController {
             return .portrait
         }
     }
+    
+    static func convertInterfaceOrientationMaskToInterfaceOrientation(_ orientationMask: UIInterfaceOrientationMask) -> UIInterfaceOrientation {
+        switch orientationMask {
+        case .landscapeLeft:
+            return .landscapeRight
+        case .landscapeRight:
+            return .landscapeLeft
+        case .landscape:
+            return .landscapeLeft
+        default:
+            return .portrait
+        }
+    }
 }
 
 extension BaseViewController {
@@ -47,6 +60,8 @@ extension BaseViewController {
         static var canRotation: String = "canRotation"
         
         static var orientationMask: String = "orientationMask"
+        
+        static var isLocked: String = "isLocked"
     }
     
     var isFullScreen:Bool {
@@ -54,9 +69,9 @@ extension BaseViewController {
     }
     
     /// 是否可以旋转
-    fileprivate var canRotation:Bool {
+    var canRotation:Bool {
         get {
-            return objc_getAssociatedObject(self, &AssociatedKey.canRotation) as? Bool ?? false
+            return objc_getAssociatedObject(self, &AssociatedKey.canRotation) as? Bool ?? true
         }
         set(newValue) {
             objc_setAssociatedObject(self, &AssociatedKey.canRotation, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -71,6 +86,15 @@ extension BaseViewController {
             if newValue != orientationMask {
                 objc_setAssociatedObject(self, &AssociatedKey.orientationMask, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             }
+        }
+    }
+    
+    var isLocked: Bool {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKey.isLocked) as? Bool ?? false
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &AssociatedKey.isLocked, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 }
