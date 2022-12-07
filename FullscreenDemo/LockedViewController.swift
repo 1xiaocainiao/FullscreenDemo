@@ -72,12 +72,6 @@ class LockedViewController: BaseViewController {
         isLocked = !isLocked
         
         refreshLockedBtnTitle()
-        
-        if isLocked {
-            removeObserverSwitchLandscape()
-        } else {
-            addObserverSwitchLandscape()
-        }
     }
     
     func refreshLockedBtnTitle() {

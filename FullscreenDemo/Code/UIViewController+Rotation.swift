@@ -83,7 +83,7 @@ extension BaseViewController {
             return objc_getAssociatedObject(self, &AssociatedKey.orientationMask) as? UIInterfaceOrientationMask ?? .portrait
         }
         set(newValue) {
-            if newValue != orientationMask {
+            if newValue != orientationMask, !isLocked {
                 objc_setAssociatedObject(self, &AssociatedKey.orientationMask, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             }
         }
