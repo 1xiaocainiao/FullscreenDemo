@@ -57,11 +57,13 @@ extension UIViewController {
 
 extension BaseViewController {
     private struct AssociatedKey {
-        static var canRotation: String = "canRotation"
+        static var autoRotationOpen: String = "autoRotationOpen"
         
         static var orientationMask: String = "orientationMask"
         
         static var isLocked: String = "isLocked"
+        
+        static var isBackground: String = "isBackground"
     }
     
     var isFullScreen:Bool {
@@ -69,12 +71,12 @@ extension BaseViewController {
     }
     
     /// 是否可以旋转
-    var canRotation:Bool {
+    var autoRotationOpen:Bool {
         get {
-            return objc_getAssociatedObject(self, &AssociatedKey.canRotation) as? Bool ?? true
+            return objc_getAssociatedObject(self, &AssociatedKey.autoRotationOpen) as? Bool ?? true
         }
         set(newValue) {
-            objc_setAssociatedObject(self, &AssociatedKey.canRotation, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedKey.autoRotationOpen, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
@@ -97,6 +99,15 @@ extension BaseViewController {
             objc_setAssociatedObject(self, &AssociatedKey.isLocked, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
+    
+    fileprivate var isBackground:Bool {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKey.isBackground) as? Bool ?? false
+        }
+        set(newValue) {
+            objc_setAssociatedObject(self, &AssociatedKey.isBackground, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
 }
 
 extension BaseViewController {
@@ -116,7 +127,11 @@ extension BaseViewController {
     }
     
     @objc func rotationDidChanged(_ noti: Notification) {
-        if !canRotation {
+        if isBackground {
+            return
+        }
+        
+        if !autoRotationOpen {
             return
         }
         
@@ -199,10 +214,10 @@ extension BaseViewController {
     }
     /// 进入前台
     @objc func didBecomeActive(_ noti: Notification) {
-        canRotation = true
+        isBackground = false
     }
     /// 进入后台
     @objc func willResignActive(_ noti: Notification) {
-        canRotation = false
+        isBackground = true
     }
 }
