@@ -57,13 +57,13 @@ extension UIViewController {
 
 extension BaseViewController {
     private struct AssociatedKey {
-        static var autoRotationOpen: String = "autoRotationOpen"
+        static var autoRotationOpen: Int = 0
         
-        static var orientationMask: String = "orientationMask"
+        static var orientationMask: Int = 0
         
-        static var isLocked: String = "isLocked"
+        static var isLocked: Int = 0
         
-        static var isBackground: String = "isBackground"
+        static var isBackground: Int = 0
     }
     
     var isFullScreen:Bool {
